@@ -5,7 +5,7 @@ const url = require('url');
 
 http.createServer((req, res) => {
     const q = url.parse(req.url, true);
-    const fileName = "." + q.pathname;
+    const fileName = "." + q.pathname;     // To get the fileName to fetch the html file;
     fs.readFile(fileName, (err,data) => {
         if(err) {
             res.writeHead(404, {'Content-Type' : 'text/html'});
